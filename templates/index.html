@@ -1,34 +1,40 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<!-- TODO: ABSOLUTELY IN NEED OF CSS -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>URL Shorty</title>
+  </head>
 
-<!-- QUICK AND DIRTY CSS; SHOULD BE IT'S OWN CSS FILE -->
-<style>
-input[type=text] {
-    width: 200px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
+  <body>
+    <br>
+    <div class="container">
+      <img src="shorty.PNG" alt="Happiness">
+    </div><br>
 
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-    width: 50%;
-}
-</style>
+    <!-- SEARCH BAR -->
+    <div class="container">
+      <form method="POST">
+	<div class="col align-self-center">
+	  <!-- <input type="text" name="URL" placeholder="Enter a URL to shorten.."> -->
+	  <input type="text" name="URL" class="form-control" placeholder="Enter URL...">
+	</div><br>
+	<!-- <input type="submit" value="Submit"> -->
+	<center><button type="submit" class="btn btn-primary">Get my short URL!</button></center>
+      </form>
+      </div>
+    </div>
 
-<!-- SEARCH BAR -->
-<form method="POST">
-  <input type="text" name="URL" placeholder="Enter a URL to shorten..">
-  <input type="submit" value="Submit">
-</form>
+    <!-- ONLY POPULATE PAGE WITH URL INFO IF SUBMITTED IN WEBFORM ACCORDING TO APP.PY -->
+    {% if long_url %}
+    <br><br><center><p>{{long_url}}</p></center>
+    {% endif %}
 
-<!-- ONLY POPULATE PAGE WITH URL INFO IF SUBMITTED IN WEBFORM ACCORDING TO APP.PY -->
-{% if long_url %}
-<p>{{long_url}}</p>
-{% endif %}
-
-{% if short_url %}
-<p><a href={{short_url}}>/{{short_url}}</a></p>
-{% endif %}
+    {% if short_url %}
+    <center><p><a href={{short_url}}>shorty.com/{{short_url}}</a></p></center>
+    {% endif %}
+  </body>
 
 </html>
