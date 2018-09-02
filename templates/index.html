@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<!-- TODO: ABSOLUTELY IN NEED OF CSS -->
+
+<!-- QUICK AND DIRTY CSS; SHOULD BE IT'S OWN CSS FILE -->
+<style>
+input[type=text] {
+    width: 200px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+    width: 50%;
+}
+</style>
+
+<!-- SEARCH BAR -->
+<form method="POST">
+  <input type="text" name="URL" placeholder="Enter a URL to shorten..">
+  <input type="submit" value="Submit">
+</form>
+
+<!-- ONLY POPULATE PAGE WITH URL INFO IF SUBMITTED IN WEBFORM ACCORDING TO APP.PY -->
+{% if long_url %}
+<p>{{long_url}}</p>
+{% endif %}
+
+{% if short_url %}
+<p><a href={{short_url}}>/{{short_url}}</a></p>
+{% endif %}
+
+</html>
