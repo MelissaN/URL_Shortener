@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS long_short_urls(
        short_url VARCHAR(255) NOT NULL,
        long_url VARCHAR(255) NOT NULL,
        PRIMARY KEY (short_url)
-)
+);
 INSERT INTO long_short_urls (short_url, long_url) VALUES ("example", "http://wikipedia.com");
