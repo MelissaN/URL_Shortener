@@ -2,7 +2,7 @@
 > App shortens any URL you give it. Quick clone of Bitly, Google, and other URL shorteners.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MelissaN/URL_Shortener/master/templates/shorty_url.gif">
+  <img src="https://raw.githubusercontent.com/MelissaN/URL_Shortener/master/static/shorty_url.gif">
 </p>
 
 #### Environment
